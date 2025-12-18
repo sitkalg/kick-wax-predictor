@@ -10,7 +10,7 @@ Run: streamlit run kick_wax_simple.py
 import streamlit as st
 import numpy as np
 
-st.set_page_config(page_title="Kick Wax Predictor", page_icon="🎿", layout="wide")
+st.set_page_config(page_title="Kick Wax Predictor", layout="wide")
 
 
 # =============================================================================
@@ -254,7 +254,7 @@ st.markdown("""
 def main():
     st.markdown('''
     <div class="main-header">
-        <h1>🎿 Kick Wax Predictor</h1>
+        <h1>Kick Wax Predictor</h1>
         <p>AI-powered Swix wax recommendations for cross-country skiing</p>
     </div>
     ''', unsafe_allow_html=True)
@@ -319,11 +319,11 @@ def main():
     st.markdown("---")
     
     # PREDICT
-    if st.button("🎯 GET WAX RECOMMENDATIONS", type="primary", use_container_width=True):
+    if st.button("GET WAX RECOMMENDATIONS", type="primary", use_container_width=True):
         
         recs = predict_wax(snow_temp, air_temp, humidity, is_artificial, snow_humidity_code)
         
-        st.markdown("## 🏆 Top 3 Recommendations")
+        st.markdown("## Top 3 Recommendations")
         st.caption(f"📍 {venue} | ❄️ Snow: {snow_temp}°C | 🌡️ Air: {air_temp}°C | 💧 {humidity}% RH | {snow_code}")
         
         for rec in recs:
@@ -356,7 +356,7 @@ def main():
     
     # Sidebar
     with st.sidebar:
-        st.markdown("### 🎿 Swix Wax Guide")
+        st.markdown("### Swix Wax Guide")
         st.markdown("""
         **Base Layer (Binder):**
         - **KX20/KX30**: Very cold (<-12°C)
@@ -373,7 +373,7 @@ def main():
         """)
         
         st.markdown("---")
-        st.markdown("### ℹ️ About")
+        st.markdown("### About")
         st.markdown("""
         Recommendations based on:
         - Swix wax charts
